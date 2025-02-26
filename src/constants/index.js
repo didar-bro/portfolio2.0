@@ -46,7 +46,7 @@ const services = [
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "React Developer",
     icon: mobile,
   },
   {
@@ -54,7 +54,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Database designer",
     icon: creator,
   },
 ];
@@ -116,37 +116,32 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
+    title: "BSC in Computer Science and Engineering",
+    company_name: "North South University",
     icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    iconBg: "#E6DEDD",
+    date: "2020 - 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "I have done my Bachelor degree in Computer Science and Engineering form North South University in Dhaka, Bangladesh.",
+      
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
+    title: "Research Assistant", 
+    company_name: "North South University",
     icon: tesla,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jane 2024 - December 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Worked as a research assistant with DR. Mohammad Abdul Qayum(Assistant professor at North South University)  on Embedded System, robotics, Artificial Intelligence and Machine Learning. ",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
+    title: "MERN stack Developer",
+    company_name: "Startsmartz",
     icon: shopify,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "November 2024 - Current",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -154,19 +149,7 @@ const experiences = [
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
+
 ];
 
 const testimonials = [
