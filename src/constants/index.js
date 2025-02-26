@@ -140,7 +140,7 @@ const experiences = [
     title: "MERN stack Developer",
     company_name: "Startsmartz",
     icon: shopify,
-    iconBg: "#383E56",
+    iconBg: "white",
     date: "November 2024 - Current",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
