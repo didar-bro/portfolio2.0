@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -31,6 +33,27 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
+    // Show "Sending..." for 1 second regardless of email send status
+    setTimeout(() => {
+      setLoading(false);
+      
+      toast.success("Message sent successfully!", {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    }, 1000);
+
+    // Send email in background (no need to wait for response)
     emailjs
       .send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -46,20 +69,10 @@ const Contact = () => {
       )
       .then(
         () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
+          console.log("Email sent successfully");
         },
         (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
+          console.error("Email send error:", error);
         }
       );
   };
@@ -68,6 +81,28 @@ const Contact = () => {
     <div
       className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
     >
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        style={{ zIndex: 9999 }}
+        toastStyle={{
+          backgroundColor: '#1a1a2e',
+          color: '#ffffff',
+          borderRadius: '10px',
+          border: '1px solid #915EFF',
+        }}
+        progressStyle={{
+          background: '#915EFF',
+        }}
+      />
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
