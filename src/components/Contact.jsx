@@ -58,9 +58,11 @@ const Contact = () => {
           <p className="text-white/70 text-xs font-medium uppercase tracking-wider mb-1">
             Ready to collaborate?
           </p>
-          <h3 className="text-2xl font-bold text-white">
-            Let's Build <span className="text-purple-500">Together</span>
-          </h3>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-blue-400 via-white to-purple-400 bg-clip-text text-transparent">
+              Let's Build Together
+            </span>
+          </h2>
           <p className="text-secondary text-sm mt-2 max-w-lg leading-snug">
             Have a project in mind? Let's turn your vision into reality.
           </p>
@@ -187,7 +189,9 @@ const Contact = () => {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => window.open(`https://wa.me/${whatsappLink}`, "_blank")}
+              onClick={() =>
+                window.open(`https://wa.me/${whatsappLink}`, "_blank")
+              }
               className="w-full bg-gradient-to-r from-emerald-600/20 to-emerald-700/20 border border-emerald-500/30 py-2.5 rounded-lg text-white text-xs font-medium hover:from-emerald-600/30 hover:to-emerald-700/30 transition-all group-hover:shadow-md group-hover:shadow-emerald-900/20"
             >
               <span className="flex items-center justify-center gap-1.5">
