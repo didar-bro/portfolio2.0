@@ -98,8 +98,7 @@ const Hero = () => {
       {/* Main content container - CENTERED VERTICALLY AND HORIZONTALLY */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className={`max-w-7xl w-full ${styles.paddingX}`}>
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
-            
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-60">            
             {/* LEFT SIDE – TEXT - CENTERED CONTENT */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}

@@ -106,8 +106,6 @@
 
 // export default Navbar;
 
-
-
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Download } from "lucide-react";
@@ -169,7 +167,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden sm:flex items-center gap-12">
+        <div className="hidden sm:flex items-center gap-8">
           <ul className="list-none flex flex-row gap-10">
             {navLinks.map((nav) => (
               <li
@@ -185,9 +183,9 @@ const Navbar = () => {
           </ul>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-3 pl-6 border-l border-secondary/30">
+          <div className="flex items-center gap-3 px-6 border-x border-secondary/30">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/didarbro"
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:text-white transition-colors duration-200"
@@ -196,7 +194,7 @@ const Navbar = () => {
               <Github size={20} />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/didarul-islam131299/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:text-white transition-colors duration-200"
@@ -207,7 +205,7 @@ const Navbar = () => {
           </div>
 
           {/* CV Button */}
-          <div className="pl-6 border-l border-secondary/30">
+          <div>
             <a
               href={CV_LINK}
               target="_blank"
@@ -253,7 +251,7 @@ const Navbar = () => {
               {/* Mobile Social Icons */}
               <li className="flex gap-4 pt-4 border-t border-secondary/20">
                 <a
-                  href="https://github.com/didarbro"
+                  href="https://github.com/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-secondary hover:text-white transition-colors duration-200"
@@ -262,7 +260,7 @@ const Navbar = () => {
                   <Github size={24} />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/didarul-islam131299/"
+                  href="https://linkedin.com/in/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-secondary hover:text-white transition-colors duration-200"
