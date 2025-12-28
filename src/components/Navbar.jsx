@@ -30,7 +30,7 @@ const Navbar = () => {
   const contactButtonRef = useRef(null);
 
   const CV_LINK =
-    "https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing";
+    "https://drive.google.com/drive/folders/1h1nsgD3yLsxqFSj3VBz33joJDByk0LRX?usp=sharing";
 
   const contactInfo = {
     email: "didar131299@gmail.com",
