@@ -123,11 +123,10 @@ const experiences = [
     date: "2020 - 2024",
     points: [
       "I have done my Bachelor degree in Computer Science and Engineering form North South University in Dhaka, Bangladesh.",
-      
     ],
   },
   {
-    title: "Research Assistant", 
+    title: "Research Assistant",
     company_name: "North South University",
     icon: tesla,
     iconBg: "#E6DEDD",
@@ -149,7 +148,6 @@ const experiences = [
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
-
 ];
 
 const testimonials = [
@@ -181,68 +179,74 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Interior Design Website",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "This website is a content-focused platform designed to present the company's interior design services, organized through clear navigation and categorized portfolios. It highlights completed projects with detailed showcases, introduces the company and owner portfolio, and includes a blog for updates and insights. The site also enables user engagement through clear calls to action such as contact, quotation, and consultation, without incorporating e-commerce functionality.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      { name: "react", color: "text-blue-500" },
+      { name: "mongodb", color: "text-green-500" },
+      { name: "tailwind", color: "text-pink-500" },
     ],
-    image: carrent,
+    images: [carrent, jobit, tripguide], // Multiple images for slideshow
     source_code_link: "https://github.com/",
+    live_link: "https://interior-design-demo.example.com",
+    details: "https://docs.example.com/interior-design",
   },
   {
     name: "Job IT",
     description:
       "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      { name: "react", color: "text-blue-500" },
+      { name: "restapi", color: "text-green-500" },
+      { name: "scss", color: "text-pink-500" },
     ],
-    image: jobit,
+    images: [jobit, carrent, tripguide], // Multiple images for slideshow
     source_code_link: "https://github.com/",
+    live_link: "https://jobit-demo.example.com",
+    details: "https://docs.example.com/jobit",
   },
   {
     name: "Trip Guide",
     description:
       "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
     tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      { name: "nextjs", color: "text-blue-500" },
+      { name: "supabase", color: "text-green-500" },
+      { name: "css", color: "text-pink-500" },
     ],
-    image: tripguide,
+    images: [tripguide, jobit, carrent], // Multiple images for slideshow
     source_code_link: "https://github.com/",
+    live_link: "https://tripguide-demo.example.com",
+    details: "https://docs.example.com/tripguide",
+  },
+  {
+    name: "Trip Guide",
+    description:
+      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+    tags: [
+      { name: "nextjs", color: "text-blue-500" },
+      { name: "supabase", color: "text-green-500" },
+      { name: "css", color: "text-pink-500" },
+    ],
+    images: [tripguide, jobit, carrent], // Multiple images for slideshow
+    source_code_link: "https://github.com/",
+    live_link: "https://tripguide-demo.example.com",
+    details: "https://docs.example.com/tripguide",
+  },
+  {
+    name: "Trip Guide",
+    description:
+      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+    tags: [
+      { name: "nextjs", color: "text-blue-500" },
+      { name: "supabase", color: "text-green-500" },
+      { name: "css", color: "text-pink-500" },
+    ],
+    images: [tripguide, jobit, carrent], // Multiple images for slideshow
+    source_code_link: "https://github.com/",
+    live_link: "https://tripguide-demo.example.com",
+    details: "https://docs.example.com/tripguide",
   },
 ];
-
 export { services, technologies, experiences, testimonials, projects };
