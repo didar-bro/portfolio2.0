@@ -24,6 +24,13 @@ import {
   tripguide,
   threejs,
 } from "../assets";
+import {
+  EcoWave1,
+  EcoWave2,
+  EcoWave3,
+  EcoWave4,
+  EcoWave5,
+} from "../assets/projects";
 
 export const navLinks = [
   {
@@ -186,10 +193,12 @@ const projects = [
       { name: "react", color: "text-blue-500" },
       { name: "mongodb", color: "text-green-500" },
       { name: "tailwind", color: "text-pink-500" },
+      { name: "nextjs", color: "text-blue-500" },
+      { name: "expressjs", color: "text-green-500" },
     ],
-    images: [carrent, jobit, tripguide], // Multiple images for slideshow
+    images: [EcoWave1, EcoWave2, EcoWave3, EcoWave4, EcoWave5], // Multiple images for slideshow
     source_code_link: "https://github.com/",
-    live_link: "https://interior-design-demo.example.com",
+    live_link: "https://ecowave-consultant.vercel.app/",
     details: "https://docs.example.com/interior-design",
   },
   {
