@@ -647,7 +647,7 @@ const Works = () => {
                     className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-white to-purple-400 
                                 bg-clip-text text-transparent mb-2"
                   >
-                    4+
+                    2+
                   </div>
 
                   <div className="text-lg font-semibold text-white mb-3">

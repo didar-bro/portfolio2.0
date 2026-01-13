@@ -65,7 +65,7 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "MERN Web Developer",
     icon: web,
   },
   {
@@ -73,11 +73,11 @@ const services = [
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Backend Focused Developer",
     icon: backend,
   },
   {
-    title: "Database designer",
+    title: "AI/ML Developer and Researcher",
     icon: creator,
   },
 ];
@@ -256,7 +256,7 @@ const projects = [
       { name: "NLP", color: "text-green-500" },
     ],
     images: [chestxray], // Single image
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.chest-xray.com/",
     details: "https://docs.example.com/chest-xray",
     category: "ai-ml",
@@ -273,7 +273,7 @@ const projects = [
       { name: "Grad-CAM", color: "text-green-500" },
     ],
     images: [braintumor], // Single image
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.brain-tumor.ai/",
     details: "https://docs.example.com/brain-tumor",
     category: "ai-ml",
@@ -290,7 +290,7 @@ const projects = [
       { name: "Computer Vision", color: "text-blue-500" },
     ],
     images: [smokeprediction], // Single image
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.smoke-detection.com/",
     details: "https://docs.example.com/vehicle-smoke",
     category: "ai-ml",
@@ -307,7 +307,7 @@ const projects = [
       { name: "WebRTC", color: "text-blue-500" },
     ],
     images: [facialemotion], // Single image
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.emotion-detection.com/",
     details: "https://docs.example.com/emotion-detection",
     category: "ai-ml",
@@ -324,7 +324,7 @@ const projects = [
       { name: "Gesture Recognition", color: "text-yellow-500" },
     ],
     images: [signlanguage], // Single image
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.sign-language.com/",
     details: "https://docs.example.com/sign-language",
     category: "ai-ml",
@@ -341,7 +341,7 @@ const projects = [
       { name: "Predictive Analytics", color: "text-purple-500" },
     ],
     images: [strokeprediction], // Single image
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.stroke-prediction.com/",
     details: "https://docs.example.com/stroke-prediction",
     category: "ai-ml",
@@ -358,7 +358,7 @@ const projects = [
       { name: "Predictive Modeling", color: "text-purple-500" },
     ],
     images: [studentdropout], // Single image
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.student-dropout.com/",
     details: "https://docs.example.com/student-dropout",
     category: "ai-ml",
@@ -375,7 +375,7 @@ const projects = [
       { name: "Multi-class", color: "text-green-500" },
     ],
     images: [hyperkvasir], // Single image
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.hyper-kvasir.com/",
     details: "https://docs.example.com/hyper-kvasir",
     category: "ai-ml",
