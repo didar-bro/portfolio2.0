@@ -9,6 +9,13 @@ import close from "./close.svg";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
+import python from "./tech/python.png";
+import langchain from "./tech/langchain.png";
+import openai from "./tech/openai.png";
+import pytorch from "./tech/pytorch.png";
+import sklearn from "./tech/sklearn.png";
+import tensorflow from "./tech/tensorflow.png";
+
 import figma from "./tech/figma.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
@@ -59,4 +66,10 @@ export {
   carrent,
   jobit,
   tripguide,
+  python,
+  langchain,
+  openai,
+  pytorch,
+  sklearn,
+  tensorflow,
 };

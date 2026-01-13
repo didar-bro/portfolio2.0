@@ -23,6 +23,12 @@ import {
   jobit,
   tripguide,
   threejs,
+  python,
+  langchain,
+  openai,
+  pytorch,
+  sklearn,
+  tensorflow,
 } from "../assets";
 import {
   EcoWave1,
@@ -30,6 +36,16 @@ import {
   EcoWave3,
   EcoWave4,
   EcoWave5,
+  braintumor,
+  chestxray,
+  signlanguage,
+  smokeprediction,
+  facialemotion,
+  strokeprediction,
+  studentdropout,
+  hyperkvasir,
+
+
 } from "../assets/projects";
 
 export const navLinks = [
@@ -108,22 +124,48 @@ const technologies = [
     icon: threejs,
   },
   {
-    name: "git",
+    name: "Git",
     icon: git,
   },
   {
-    name: "figma",
+    name: "Figma",
     icon: figma,
   },
   {
-    name: "docker",
+    name: "Docker",
     icon: docker,
+  },
+
+  // 🔹 AI / ML Technologies
+  {
+    name: "Python",
+    icon: python,
+  },
+  {
+    name: "TensorFlow",
+    icon: tensorflow,
+  },
+  {
+    name: "PyTorch",
+    icon: pytorch,
+  },
+  {
+    name: "Scikit-learn",
+    icon: sklearn,
+  },
+  {
+    name: "OpenAI / LLM APIs",
+    icon: openai,
+  },
+  {
+    name: "LangChain",
+    icon: langchain,
   },
 ];
 
 const experiences = [
   {
-    title: "BSC in Computer Science and Engineering",
+    title: "BSC in Computer Science and Engineering (AI Major)",
     company_name: "North South University",
     icon: starbucks,
     iconBg: "#E6DEDD",
@@ -196,66 +238,147 @@ const projects = [
       { name: "nextjs", color: "text-blue-500" },
       { name: "expressjs", color: "text-green-500" },
     ],
-    images: [EcoWave1, EcoWave2, EcoWave3, EcoWave4, EcoWave5], // Multiple images for slideshow
+    images: [EcoWave1], // Single image
     source_code_link: "https://github.com/",
     live_link: "https://ecowave-consultant.vercel.app/",
     details: "https://docs.example.com/interior-design",
+    category: "development",
   },
   {
-    name: "Job IT",
+    name: "Chest X-ray Report Generation",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "An AI-powered system that automatically analyzes chest X-ray images and generates comprehensive medical reports. Uses deep learning models to detect abnormalities, lung conditions, and provide diagnostic insights to assist radiologists.",
     tags: [
-      { name: "react", color: "text-blue-500" },
-      { name: "restapi", color: "text-green-500" },
-      { name: "scss", color: "text-pink-500" },
+      { name: "Python", color: "text-yellow-500" },
+      { name: "TensorFlow", color: "text-orange-500" },
+      { name: "OpenCV", color: "text-blue-500" },
+      { name: "Medical Imaging", color: "text-red-500" },
+      { name: "NLP", color: "text-green-500" },
     ],
-    images: [jobit, carrent, tripguide], // Multiple images for slideshow
+    images: [chestxray], // Single image
     source_code_link: "https://github.com/",
-    live_link: "https://jobit-demo.example.com",
-    details: "https://docs.example.com/jobit",
+    live_link: "https://demo.chest-xray.com/",
+    details: "https://docs.example.com/chest-xray",
+    category: "ai-ml",
   },
   {
-    name: "Trip Guide",
+    name: "Brain Tumor Detection & Classification",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Computer vision system that detects and classifies brain tumors from MRI scans using convolutional neural networks. Classifies tumors into glioma, meningioma, pituitary, or no-tumor categories with high accuracy.",
     tags: [
-      { name: "nextjs", color: "text-blue-500" },
-      { name: "supabase", color: "text-green-500" },
-      { name: "css", color: "text-pink-500" },
+      { name: "PyTorch", color: "text-red-500" },
+      { name: "CNN", color: "text-purple-500" },
+      { name: "Medical AI", color: "text-red-500" },
+      { name: "Image Processing", color: "text-blue-500" },
+      { name: "Grad-CAM", color: "text-green-500" },
     ],
-    images: [tripguide, jobit, carrent], // Multiple images for slideshow
+    images: [braintumor], // Single image
     source_code_link: "https://github.com/",
-    live_link: "https://tripguide-demo.example.com",
-    details: "https://docs.example.com/tripguide",
+    live_link: "https://demo.brain-tumor.ai/",
+    details: "https://docs.example.com/brain-tumor",
+    category: "ai-ml",
   },
   {
-    name: "Trip Guide",
+    name: "Vehicle Smoke Prediction & Classification",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Real-time computer vision system that detects and classifies vehicle smoke emissions using surveillance cameras. Helps environmental agencies monitor pollution and identify polluting vehicles.",
     tags: [
-      { name: "nextjs", color: "text-blue-500" },
-      { name: "supabase", color: "text-green-500" },
-      { name: "css", color: "text-pink-500" },
+      { name: "YOLOv8", color: "text-purple-500" },
+      { name: "OpenCV", color: "text-blue-500" },
+      { name: "Real-time", color: "text-green-500" },
+      { name: "Environmental AI", color: "text-green-500" },
+      { name: "Computer Vision", color: "text-blue-500" },
     ],
-    images: [tripguide, jobit, carrent], // Multiple images for slideshow
+    images: [smokeprediction], // Single image
     source_code_link: "https://github.com/",
-    live_link: "https://tripguide-demo.example.com",
-    details: "https://docs.example.com/tripguide",
+    live_link: "https://demo.smoke-detection.com/",
+    details: "https://docs.example.com/vehicle-smoke",
+    category: "ai-ml",
   },
   {
-    name: "Trip Guide",
+    name: "Real-time Facial Emotion Detection",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Live emotion recognition system using webcam feed that detects seven basic emotions: anger, disgust, fear, happiness, sadness, surprise, and neutral. Built with deep learning models for real-time performance.",
     tags: [
-      { name: "nextjs", color: "text-blue-500" },
-      { name: "supabase", color: "text-green-500" },
-      { name: "css", color: "text-pink-500" },
+      { name: "Deep Learning", color: "text-purple-500" },
+      { name: "Real-time", color: "text-green-500" },
+      { name: "OpenCV", color: "text-blue-500" },
+      { name: "FER", color: "text-pink-500" },
+      { name: "WebRTC", color: "text-blue-500" },
     ],
-    images: [tripguide, jobit, carrent], // Multiple images for slideshow
+    images: [facialemotion], // Single image
     source_code_link: "https://github.com/",
-    live_link: "https://tripguide-demo.example.com",
-    details: "https://docs.example.com/tripguide",
+    live_link: "https://demo.emotion-detection.com/",
+    details: "https://docs.example.com/emotion-detection",
+    category: "ai-ml",
+  },
+  {
+    name: "Real-time Sign Language Detection",
+    description:
+      "Interactive system that translates American Sign Language gestures into text and speech in real-time. Uses pose estimation and sequence models to recognize dynamic gestures with high accuracy.",
+    tags: [
+      { name: "MediaPipe", color: "text-orange-500" },
+      { name: "LSTM", color: "text-purple-500" },
+      { name: "Real-time", color: "text-green-500" },
+      { name: "Accessibility", color: "text-blue-500" },
+      { name: "Gesture Recognition", color: "text-yellow-500" },
+    ],
+    images: [signlanguage], // Single image
+    source_code_link: "https://github.com/",
+    live_link: "https://demo.sign-language.com/",
+    details: "https://docs.example.com/sign-language",
+    category: "ai-ml",
+  },
+  {
+    name: "Stroke Prediction using Machine Learning",
+    description:
+      "Predictive analytics system that identifies individuals at risk of stroke using patient health data. Implements multiple ML algorithms with feature importance analysis for early intervention.",
+    tags: [
+      { name: "Scikit-learn", color: "text-orange-500" },
+      { name: "XGBoost", color: "text-green-500" },
+      { name: "Feature Engineering", color: "text-blue-500" },
+      { name: "Healthcare", color: "text-red-500" },
+      { name: "Predictive Analytics", color: "text-purple-500" },
+    ],
+    images: [strokeprediction], // Single image
+    source_code_link: "https://github.com/",
+    live_link: "https://demo.stroke-prediction.com/",
+    details: "https://docs.example.com/stroke-prediction",
+    category: "ai-ml",
+  },
+  {
+    name: "Student Dropout Prediction System",
+    description:
+      "Machine learning system that predicts student dropout risk using academic and demographic data. Helps educational institutions implement early intervention strategies to improve retention rates.",
+    tags: [
+      { name: "Random Forest", color: "text-green-500" },
+      { name: "Logistic Regression", color: "text-blue-500" },
+      { name: "EDA", color: "text-yellow-500" },
+      { name: "Education", color: "text-blue-500" },
+      { name: "Predictive Modeling", color: "text-purple-500" },
+    ],
+    images: [studentdropout], // Single image
+    source_code_link: "https://github.com/",
+    live_link: "https://demo.student-dropout.com/",
+    details: "https://docs.example.com/student-dropout",
+    category: "ai-ml",
+  },
+  {
+    name: "Hyper-Kvasir Localization & Classification",
+    description:
+      "Advanced system for gastrointestinal disease detection from endoscopic images. Localizes anomalies and classifies them into multiple disease categories using state-of-the-art object detection models.",
+    tags: [
+      { name: "Detectron2", color: "text-purple-500" },
+      { name: "Object Detection", color: "text-blue-500" },
+      { name: "Medical AI", color: "text-red-500" },
+      { name: "Endoscopy", color: "text-red-500" },
+      { name: "Multi-class", color: "text-green-500" },
+    ],
+    images: [hyperkvasir], // Single image
+    source_code_link: "https://github.com/",
+    live_link: "https://demo.hyper-kvasir.com/",
+    details: "https://docs.example.com/hyper-kvasir",
+    category: "ai-ml",
   },
 ];
 export { services, technologies, experiences, testimonials, projects };

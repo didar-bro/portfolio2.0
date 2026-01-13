@@ -1,26 +1,3 @@
-// import React from "react";
-
-// import { BallCanvas } from "./canvas";
-// import { SectionWrapper } from "../hoc";
-// import { technologies } from "../constants";
-
-// const Tech = () => {
-//   return (
-//     <div className='flex flex-row flex-wrap justify-center gap-10'>
-//       {technologies.map((technology) => (
-//         <div className='w-28 h-28' key={technology.name}>
-//           <BallCanvas icon={technology.icon} />
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default SectionWrapper(Tech, "");
-
-
-
-
 import React, { useState } from "react";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
@@ -77,6 +54,17 @@ const Tech = () => {
         "Yarn",
       ].includes(tech.name)
     ),
+    // New AI/ML category
+    aiMl: technologies.filter((tech) =>
+      [
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "Scikit-learn",
+        "OpenAI / LLM APIs",
+        "LangChain",
+      ].includes(tech.name)
+    ),
   };
 
   const categories = [
@@ -97,17 +85,16 @@ const Tech = () => {
       name: "Tools & Others",
       count: categorizedTech.tools.length,
     },
+    // New AI/ML category entry
+    {
+      id: "aiMl",
+      name: "AI/ML",
+      count: categorizedTech.aiMl.length,
+    },
   ];
 
   const currentTech = categorizedTech[activeCategory] || technologies;
 
-  // Client logos or references (you can replace with actual client logos)
-  const clients = [
-    { name: "SaaS Startup", projects: 3 },
-    { name: "E-commerce Platform", projects: 2 },
-    { name: "FinTech Company", projects: 1 },
-    { name: "Healthcare Tech", projects: 2 },
-  ];
 
   return (
     <div className="relative w-full">
@@ -149,143 +136,8 @@ const Tech = () => {
         </div>
       </div>
 
-      {/* Stats Section - Enhanced */}
-      {/* <div className="relative z-10 mb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
-          <div className="relative group">
-            <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 
-                          rounded-3xl blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-            
-            <div
-              className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-2xl p-8 
-                        backdrop-blur-sm border border-gray-700/30 
-                        group-hover:border-blue-500/30 transition-all duration-300 
-                        group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.4)]"
-            >
-              <div className="flex items-start justify-between">
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 
-                                  flex items-center justify-center">
-                      <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
-                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-bold text-white">Professional Journey</h3>
-                  </div>
-                  
-                  <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-white to-purple-400 
-                                bg-clip-text text-transparent mb-2">
-                    4+
-                  </div>
-                  
-                  <div className="text-lg font-semibold text-white mb-3">Years of Experience</div>
-                  
-                  <p className="text-gray-400 mb-6">
-                    Specializing in full-stack development with expertise across modern web technologies, 
-                    cloud infrastructure, and agile development practices
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-3">
-                    <span className="px-3 py-1.5 text-xs font-medium rounded-full 
-                                   bg-gradient-to-r from-blue-500/20 to-purple-500/20 
-                                   text-blue-300 border border-blue-500/30">
-                      Full Stack Development
-                    </span>
-                    <span className="px-3 py-1.5 text-xs font-medium rounded-full 
-                                   bg-gradient-to-r from-blue-500/20 to-purple-500/20 
-                                   text-purple-300 border border-purple-500/30">
-                      Cloud Architecture
-                    </span>
-                    <span className="px-3 py-1.5 text-xs font-medium rounded-full 
-                                   bg-gradient-to-r from-blue-500/20 to-purple-500/20 
-                                   text-blue-300 border border-blue-500/30">
-                      Team Leadership
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative group">
-            <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 
-                          rounded-3xl blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-            
-            <div
-              className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-2xl p-8 
-                        backdrop-blur-sm border border-gray-700/30 
-                        group-hover:border-purple-500/30 transition-all duration-300 
-                        group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.4)]"
-            >
-              <div className="flex items-start justify-between">
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600/20 to-blue-600/20 
-                                  flex items-center justify-center">
-                      <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
-                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-bold text-white">Client Experience</h3>
-                  </div>
-                  
-                  <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 via-white to-blue-400 
-                                bg-clip-text text-transparent mb-2">
-                    50+
-                  </div>
-                  
-                  <div className="text-lg font-semibold text-white mb-3">Successful Projects</div>
-                  
-                  <p className="text-gray-400 mb-6">
-                    Delivered solutions for diverse industries including SaaS, E-commerce, FinTech, 
-                    and Healthcare, ensuring client satisfaction and business growth
-                  </p>
-                  
-                  <div className="space-y-3">
-                    {clients.map((client, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 
-                                                bg-gray-800/30 rounded-xl border border-gray-700/30 
-                                                hover:border-blue-500/30 transition-all duration-300">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600/20 to-purple-600/20 
-                                        flex items-center justify-center">
-                            <span className="text-xs font-bold text-white">
-                              {client.name.charAt(0)}
-                            </span>
-                          </div>
-                          <span className="text-sm font-medium text-white">
-                            {client.name}
-                          </span>
-                        </div>
-                        <div className="text-xs font-semibold px-2.5 py-1 rounded-full 
-                                      bg-gradient-to-r from-blue-500/20 to-purple-500/20 
-                                      text-blue-300">
-                          {client.projects} project{client.projects > 1 ? 's' : ''}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* Category Filter */}
       <div className="relative z-10 mb-12">
-        {/* <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold text-white mb-3">
-            Categorized Technologies
-          </h3>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Filter through my technical skills by category to explore specific areas of expertise
-          </p>
-        </div> */}
-        
         <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto px-4">
           {categories.map((category) => (
             <button

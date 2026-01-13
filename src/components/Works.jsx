@@ -1,322 +1,3 @@
-// import React, { useState } from "react";
-// import { Tilt } from "react-tilt";
-// import { motion } from "framer-motion";
-
-// // Import your images
-// import carrent from "../assets/carrent.png"; // Update with your actual paths
-// import jobit from "../assets/jobit.png";
-// import tripguide from "../assets/tripguide.png";
-// import { projects } from "../constants";
-
-// // These styles would need to be imported or defined inline
-// const styles = {
-//   sectionSubText: "text-lg text-purple-400 font-semibold tracking-wider uppercase",
-//   sectionHeadText: "text-4xl md:text-5xl font-bold text-white"
-// };
-
-// const SectionWrapper = (Component, idName) =>
-//   function HOC() {
-//     return <Component />;
-//   };
-
-// // Animation variants
-// const fadeIn = (direction, type, delay, duration) => ({
-//   hidden: {
-//     x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
-//     y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
-//     opacity: 0,
-//   },
-//   show: {
-//     x: 0,
-//     y: 0,
-//     opacity: 1,
-//     transition: {
-//       type: type,
-//       delay: delay,
-//       duration: duration,
-//       ease: "easeOut",
-//     },
-//   },
-// });
-
-// const textVariant = () => ({
-//   hidden: {
-//     y: 50,
-//     opacity: 0,
-//   },
-//   show: {
-//     y: 0,
-//     opacity: 1,
-//     transition: {
-//       type: "spring",
-//       duration: 1.25,
-//     },
-//   },
-// });
-
-// const ProjectCard = ({
-//   index,
-//   name,
-//   description,
-//   tags,
-//   images,
-//   source_code_link,
-//   live_link,
-//   details,
-//   onDetailsClick,
-// }) => {
-//   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-//   const [isHovered, setIsHovered] = useState(false);
-
-//   const handleLiveLinkClick = (e) => {
-//     e.stopPropagation();
-//     if (live_link) {
-//       window.open(live_link, "_blank", "noopener noreferrer");
-//     }
-//   };
-
-//   const handleDetailsClick = (e) => {
-//     e.stopPropagation();
-//     if (onDetailsClick) {
-//       onDetailsClick({
-//         name,
-//         description,
-//         tags,
-//         images,
-//         live_link,
-//         source_code_link,
-//         details
-//       });
-//     } else if (details) {
-//       window.open(details, "_blank", "noopener noreferrer");
-//     }
-//   };
-
-//   const nextImage = () => {
-//     setCurrentImageIndex((prevIndex) =>
-//       prevIndex === images.length - 1 ? 0 : prevIndex + 1
-//     );
-//   };
-
-//   const prevImage = () => {
-//     setCurrentImageIndex((prevIndex) =>
-//       prevIndex === 0 ? images.length - 1 : prevIndex - 1
-//     );
-//   };
-
-//   return (
-//     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} initial="hidden" animate="show">
-//       <Tilt
-//         options={{
-//           max: 45,
-//           scale: 1,
-//           speed: 450,
-//         }}
-//         className="bg-gray-900 p-5 rounded-2xl sm:w-[360px] w-full hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 border border-gray-800 hover:border-gray-700"
-//         onMouseEnter={() => setIsHovered(true)}
-//         onMouseLeave={() => setIsHovered(false)}
-//       >
-//         {/* Image Gallery Section */}
-//         <div className="relative w-full h-[230px] group overflow-hidden rounded-2xl">
-//           {/* Current Image */}
-//           <img
-//             src={images[currentImageIndex]}
-//             alt={`${name} - Image ${currentImageIndex + 1}`}
-//             className="w-full h-full object-cover transition-opacity duration-500"
-//           />
-
-//           {/* Gradient Overlay */}
-//           <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-//           {/* Image Navigation Buttons (shown on hover) */}
-//           {isHovered && images.length > 1 && (
-//             <>
-//               <button
-//                 onClick={(e) => {
-//                   e.stopPropagation();
-//                   prevImage();
-//                 }}
-//                 className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
-//                 title="Previous Image"
-//               >
-//                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-//                 </svg>
-//               </button>
-//               <button
-//                 onClick={(e) => {
-//                   e.stopPropagation();
-//                   nextImage();
-//                 }}
-//                 className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
-//                 title="Next Image"
-//               >
-//                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-//                 </svg>
-//               </button>
-//             </>
-//           )}
-
-//           {/* Image Indicator Dots */}
-//           {images.length > 1 && (
-//             <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
-//               {images.map((_, idx) => (
-//                 <button
-//                   key={idx}
-//                   onClick={(e) => {
-//                     e.stopPropagation();
-//                     setCurrentImageIndex(idx);
-//                   }}
-//                   className={`w-2 h-2 rounded-full transition-all duration-200 ${
-//                     idx === currentImageIndex
-//                       ? "bg-white scale-125"
-//                       : "bg-white/50 hover:bg-white/80"
-//                   }`}
-//                   title={`View image ${idx + 1}`}
-//                 />
-//               ))}
-//             </div>
-//           )}
-//         </div>
-
-//         {/* Project Details */}
-//         <div className="mt-5">
-//           <h3 className="text-white font-bold text-[24px] mb-2">{name}</h3>
-//           <p className="text-gray-400 text-[14px] leading-relaxed line-clamp-3">
-//             {description}
-//           </p>
-//         </div>
-
-//         {/* Tags */}
-//         <div className="mt-4 flex flex-wrap gap-2">
-//           {tags.map((tag, tagIndex) => (
-//             <span
-//               key={`${name}-${tag.name}-${tagIndex}`}
-//               className={`text-[12px] font-medium px-3 py-1 rounded-full ${tag.color} bg-gray-800/50 backdrop-blur-sm border border-gray-700`}
-//             >
-//               {tag.name}
-//             </span>
-//           ))}
-//         </div>
-
-//         {/* Image Counter */}
-//         {images.length > 1 && (
-//           <div className="mt-3 text-xs text-gray-500 flex items-center gap-1">
-//             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-//               <path fillRule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-//             </svg>
-//             <span>{currentImageIndex + 1} / {images.length}</span>
-//           </div>
-//         )}
-
-//         {/* Action Links */}
-//         <div className="mt-6 flex justify-between items-center pt-4 border-t border-gray-800">
-//           {/* Live Demo Link */}
-//           {live_link && (
-//             <button
-//               onClick={handleLiveLinkClick}
-//               className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-200 text-sm font-medium group"
-//             >
-//               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
-//                 <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-//                 <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-//               </svg>
-//               Live Demo
-//             </button>
-//           )}
-
-//           {/* Details Link */}
-//           <button
-//             onClick={handleDetailsClick}
-//             className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium group"
-//           >
-//             <svg className="w-4 h-4 group-hover:rotate-12 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
-//               <path
-//                 fillRule="evenodd"
-//                 d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-//                 clipRule="evenodd"
-//               />
-//             </svg>
-//             Details
-//           </button>
-
-//           {/* Source Code Link */}
-//           <button
-//             onClick={() => window.open(source_code_link, "_blank", "noopener noreferrer")}
-//             className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium group"
-//           >
-//             <svg className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
-//               <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-//             </svg>
-//             Code
-//           </button>
-//         </div>
-//       </Tilt>
-//     </motion.div>
-//   );
-// };
-
-// const Works = () => {
-//   const [selectedProject, setSelectedProject] = useState(null);
-
-//   const handleDetailsClick = (project) => {
-//     setSelectedProject(project);
-//     // Show detailed modal or expand view
-//     console.log("Selected project:", project);
-//     alert(`Project: ${project.name}\n\n${project.description}\n\nLive Demo: ${project.live_link || "Not available"}\nSource Code: ${project.source_code_link}`);
-//   };
-
-//   return (
-//     <div className="relative z-0 bg-gray-950 py-16 px-4 sm:px-6 lg:px-8" id="works">
-//       <div className="max-w-7xl mx-auto">
-//         {/* Section Header */}
-//         <motion.div
-//           variants={textVariant()}
-//           initial="hidden"
-//           animate="show"
-//           className="text-center mb-12"
-//         >
-//           <p className={styles.sectionSubText}>
-//             My work
-//           </p>
-//           <h2 className={styles.sectionHeadText}>
-//             Projects<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">.</span>
-//           </h2>
-//           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-8"></div>
-//         </motion.div>
-
-//         {/* Section Description */}
-//         <div className="w-full flex justify-center mb-16">
-//           <motion.p
-//             variants={fadeIn("", "", 0.1, 1)}
-//             initial="hidden"
-//             animate="show"
-//             className="mt-3 text-gray-400 text-center text-lg max-w-3xl leading-relaxed"
-//           >
-//             Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively.
-//           </motion.p>
-//         </div>
-
-//         {/* Projects Grid */}
-//         <div className="mt-12 flex flex-wrap justify-center gap-8">
-//           {projects.map((project, index) => (
-//             <ProjectCard
-//               key={`project-${index}`}
-//               index={index}
-//               {...project}
-//               onDetailsClick={handleDetailsClick}
-//             />
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// // Export the wrapped component
-// export default SectionWrapper(Works, "works");
-
 import React, { useState } from "react";
 import { Tilt } from "react-tilt";
 import { motion, AnimatePresence } from "framer-motion";
@@ -790,10 +471,46 @@ const ProjectCard = ({
 
 const Works = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [activeCategory, setActiveCategory] = useState("all");
 
   const handleToggleExpand = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
+
+  // Define project categories
+  const categories = [
+    { id: "all", name: "All Projects", count: projects.length },
+    { 
+      id: "development", 
+      name: "Development", 
+      count: projects.filter(project => !project.category || project.category === "development").length 
+    },
+    { 
+      id: "ai-ml", 
+      name: "AI/ML Projects", 
+      count: projects.filter(project => project.category === "ai-ml").length 
+    },
+  ];
+
+  // Filter projects based on active category
+  const filteredProjects = activeCategory === "all" 
+    ? projects 
+    : projects.filter(project => {
+        if (activeCategory === "development") {
+          // Show all non-AI/ML projects or projects without category
+          return !project.category || project.category === "development";
+        }
+        return project.category === activeCategory;
+      });
+
+  // Client logos or references (you can replace with actual client logos)
+  const clients = [
+    { name: "SaaS Startup", projects: 1 },
+    { name: "E-commerce Platform", projects: 1 },
+    { name: "AI/ML Project", projects: 10 },
+    { name: "Healthcare Tech", projects: 1 },
+    { name: "Freelance Project", projects: 5 },
+  ];
 
   return (
     <div
@@ -819,7 +536,7 @@ const Works = () => {
         </motion.div>
 
         {/* Section Description */}
-        <div className="w-full flex justify-center mb-16">
+        <div className="w-full flex justify-center mb-8">
           <motion.p
             variants={fadeIn("", "", 0.1, 1)}
             initial="hidden"
@@ -834,9 +551,47 @@ const Works = () => {
           </motion.p>
         </div>
 
+        {/* Category Filter Section - ADDED */}
+        <div className="relative z-10 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto px-4">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`group px-5 py-2.5 rounded-xl backdrop-blur-sm border transition-all duration-300 
+                          flex items-center gap-2 hover:scale-105 active:scale-95
+                          ${
+                            activeCategory === category.id
+                              ? "bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-blue-500/50 shadow-[0_0_25px_rgba(59,130,246,0.3)]"
+                              : "bg-gray-800/30 border-gray-700/30 hover:border-gray-600/50 hover:shadow-lg"
+                          }`}
+              >
+                <span
+                  className={`text-sm font-semibold ${
+                    activeCategory === category.id
+                      ? "text-white"
+                      : "text-gray-300 group-hover:text-white"
+                  }`}
+                >
+                  {category.name}
+                </span>
+                <span
+                  className={`px-2 py-0.5 rounded-full text-xs font-bold ${
+                    activeCategory === category.id
+                      ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+                      : "bg-gray-700/50 text-gray-400"
+                  }`}
+                >
+                  {category.count}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Projects Grid */}
-        <div className="mt-12 flex flex-wrap justify-center gap-8">
-          {projects.map((project, index) => (
+        <div className="mt-6 flex flex-wrap justify-center gap-8">
+          {filteredProjects.map((project, index) => (
             <ProjectCard
               key={`project-${index}`}
               index={index}
@@ -845,6 +600,185 @@ const Works = () => {
               onToggleExpand={handleToggleExpand}
             />
           ))}
+        </div>
+      </div>
+      {/* Stats Section - Enhanced */}
+      <div className="relative z-10 mt-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
+          <div className="relative group">
+            <div
+              className="absolute -inset-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 
+                          rounded-3xl blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"
+            ></div>
+
+            <div
+              className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-2xl p-8 
+                        backdrop-blur-sm border border-gray-700/30 
+                        group-hover:border-blue-500/30 transition-all duration-300 
+                        group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.4)]"
+            >
+              <div className="flex items-start justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div
+                      className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 
+                                  flex items-center justify-center"
+                    >
+                      <svg
+                        className="w-5 h-5 text-blue-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white">
+                      Professional Journey
+                    </h3>
+                  </div>
+
+                  <div
+                    className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-white to-purple-400 
+                                bg-clip-text text-transparent mb-2"
+                  >
+                    4+
+                  </div>
+
+                  <div className="text-lg font-semibold text-white mb-3">
+                    Years of Experience
+                  </div>
+
+                  <p className="text-gray-400 mb-6">
+                    Specializing in full-stack development with expertise across
+                    modern web technologies, cloud infrastructure, and agile
+                    development practices
+                  </p>
+
+                  <div className="flex flex-wrap gap-3">
+                    <span
+                      className="px-3 py-1.5 text-xs font-medium rounded-full 
+                                   bg-gradient-to-r from-blue-500/20 to-purple-500/20 
+                                   text-blue-300 border border-blue-500/30"
+                    >
+                      Full Stack Development
+                    </span>
+                    <span
+                      className="px-3 py-1.5 text-xs font-medium rounded-full 
+                                   bg-gradient-to-r from-blue-500/20 to-purple-500/20 
+                                   text-purple-300 border border-purple-500/30"
+                    >
+                      Cloud Architecture
+                    </span>
+                    <span
+                      className="px-3 py-1.5 text-xs font-medium rounded-full 
+                                   bg-gradient-to-r from-blue-500/20 to-purple-500/20 
+                                   text-blue-300 border border-blue-500/30"
+                    >
+                      Team Leadership
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative group">
+            <div
+              className="absolute -inset-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 
+                          rounded-3xl blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"
+            ></div>
+
+            <div
+              className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-2xl p-8 
+                        backdrop-blur-sm border border-gray-700/30 
+                        group-hover:border-purple-500/30 transition-all duration-300 
+                        group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.4)]"
+            >
+              <div className="flex items-start justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div
+                      className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600/20 to-blue-600/20 
+                                  flex items-center justify-center"
+                    >
+                      <svg
+                        className="w-5 h-5 text-purple-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white">
+                      Client Experience
+                    </h3>
+                  </div>
+
+                  <div
+                    className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 via-white to-blue-400 
+                                bg-clip-text text-transparent mb-2"
+                  >
+                    50+
+                  </div>
+
+                  <div className="text-lg font-semibold text-white mb-3">
+                    Successful Projects
+                  </div>
+
+                  <p className="text-gray-400 mb-6">
+                    Delivered solutions for diverse industries including SaaS,
+                    E-commerce, FinTech, and Healthcare, ensuring client
+                    satisfaction and business growth
+                  </p>
+
+                  <div className="space-y-3">
+                    {clients.map((client, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-3 
+                                                bg-gray-800/30 rounded-xl border border-gray-700/30 
+                                                hover:border-blue-500/30 transition-all duration-300"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div
+                            className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600/20 to-purple-600/20 
+                                        flex items-center justify-center"
+                          >
+                            <span className="text-xs font-bold text-white">
+                              {client.name.charAt(0)}
+                            </span>
+                          </div>
+                          <span className="text-sm font-medium text-white">
+                            {client.name}
+                          </span>
+                        </div>
+                        <div
+                          className="text-xs font-semibold px-2.5 py-1 rounded-full 
+                                      bg-gradient-to-r from-blue-500/20 to-purple-500/20 
+                                      text-blue-300"
+                        >
+                          {client.projects} project
+                          {client.projects > 1 ? "s" : ""}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

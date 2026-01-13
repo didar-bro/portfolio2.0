@@ -8,6 +8,15 @@ import SM2 from "./SM2.png";
 import SM3 from "./SM3.png";
 import SM4 from "./SM4.png";
 import SM5 from "./SM5.png";
+import chestxray from "./chestxray.png";
+import braintumor from "./braintumor.jpg";
+import smokeprediction from "./smoke.jpg";
+import facialemotion from "./facialemotion.jpg";
+import signlanguage from "./signlanguage.png";
+import strokeprediction from "./stroke.jpg";
+import studentdropout from "./dropout.png";
+import hyperkvasir from "./kavasir.jpg";
+
 
 export {
   EcoWave1,
@@ -20,6 +29,14 @@ export {
   SM3,
   SM4,
   SM5,
+  chestxray,
+  braintumor,
+  smokeprediction,
+  facialemotion,
+  signlanguage,
+  strokeprediction,
+  studentdropout,
+  hyperkvasir,
 };
 
 
