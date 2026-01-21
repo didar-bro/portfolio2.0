@@ -16,8 +16,18 @@ import signlanguage from "./signlanguage.png";
 import strokeprediction from "./stroke.jpg";
 import studentdropout from "./dropout.png";
 import hyperkvasir from "./kavasir.jpg";
-
-
+import hospital1 from "./hospital1.png";
+import hospital2 from "./hospital2.png";
+import hospital3 from "./hospital3.png";
+import streaming from "./streaming.png";
+import streaming2 from "./streaming2.png";
+import streaming3 from "./streaming3.png";
+import elearning from "./e-learning.png";
+import elearning2 from "./e-learning2.png";
+import elearning3 from "./e-learning3.png";
+import hotel from "./hotel.png";
+import hotel2 from "./hotel2.png";
+import hotel3 from "./hotel3.png";
 export {
   EcoWave1,
   EcoWave2,
@@ -37,6 +47,18 @@ export {
   strokeprediction,
   studentdropout,
   hyperkvasir,
+  hospital1,
+  hospital2,
+  hospital3,
+  streaming,
+  streaming2,
+  streaming3,
+  elearning,
+  elearning2,
+  elearning3,
+  hotel,
+  hotel2,
+  hotel3,
 };
 
 

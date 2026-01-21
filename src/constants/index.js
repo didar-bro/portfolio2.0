@@ -44,8 +44,18 @@ import {
   strokeprediction,
   studentdropout,
   hyperkvasir,
-
-
+  hospital1,
+  hospital2,
+  hospital3,
+  streaming,
+  streaming2,
+  streaming3,
+  elearning,
+  elearning2,
+  elearning3,
+  hotel,
+  hotel2,
+  hotel3,
 } from "../assets/projects";
 
 export const navLinks = [
@@ -238,10 +248,78 @@ const projects = [
       { name: "nextjs", color: "text-blue-500" },
       { name: "expressjs", color: "text-green-500" },
     ],
-    images: [EcoWave1], // Single image
-    source_code_link: "https://github.com/",
+    images: [EcoWave1, EcoWave2, EcoWave3, EcoWave4, EcoWave5], // Single image
+    source_code_link: "https://github.com/didarBro/Real-state-Website",
     live_link: "https://ecowave-consultant.vercel.app/",
     details: "https://docs.example.com/interior-design",
+    category: "development",
+  },
+  {
+    name: "Multi-Vendor Hotel Management System",
+    description:
+      "A comprehensive multi-vendor hotel management platform where multiple hotels can register, manage rooms, pricing, availability, and bookings from a centralized dashboard. The system supports role-based access for super admin, hotel admins, and staff, along with real-time room availability, booking management, customer records, and reporting features.",
+    tags: [
+      { name: "react", color: "text-blue-500" },
+      { name: "nodejs", color: "text-green-500" },
+      { name: "expressjs", color: "text-green-500" },
+      { name: "mongodb", color: "text-green-500" },
+      { name: "tailwind", color: "text-pink-500" },
+    ],
+    images: [hotel, hotel2, hotel3],
+    source_code_link: "https://github.com/didarBro/Hotel-Management-",
+    live_link: "https://hotel-management-demo.vercel.app/",
+    details: "https://docs.example.com/hotel-management",
+    category: "development",
+  },
+  {
+    name: "Hospital Management System",
+    description:
+      "A full-featured hospital management system designed to streamline administrative and clinical operations. It includes patient registration, appointment scheduling, doctor management, electronic medical records, billing, and role-based dashboards for admins, doctors, and reception staff. The system ensures efficient data handling and improved patient care workflows.",
+    tags: [
+      { name: "react", color: "text-blue-500" },
+      { name: "nodejs", color: "text-green-500" },
+      { name: "expressjs", color: "text-green-500" },
+      { name: "mongodb", color: "text-green-500" },
+      { name: "tailwind", color: "text-pink-500" },
+    ],
+    images: [hospital1, hospital2, hospital3],
+    source_code_link: "https://github.com/didarBro/Hospital-Management-System",
+    live_link: "https://care-chain-frontend.vercel.app/login",
+    details: "https://docs.example.com/hospital-management",
+    category: "development",
+  },
+  {
+    name: "E-Learning Management System",
+    description:
+      "An interactive e-learning management system that allows instructors to create and manage courses, upload video lessons, assignments, and quizzes. Students can enroll in courses, track progress, and access learning materials through a responsive interface. The platform includes authentication, role-based access, and performance analytics.",
+    tags: [
+      { name: "react", color: "text-blue-500" },
+      { name: "nodejs", color: "text-green-500" },
+      { name: "expressjs", color: "text-green-500" },
+      { name: "mongodb", color: "text-green-500" },
+      { name: "tailwind", color: "text-pink-500" },
+    ],
+    images: [elearning, elearning2, elearning3],
+    source_code_link: "https://github.com/didarBro/E-Learning-Management-System-",
+    live_link: "https://elearning-platform-demo.vercel.app/",
+    details: "https://docs.example.com/e-learning",
+    category: "development",
+  },
+  {
+    name: "Streaming Website",
+    description:
+      "A modern streaming platform built to deliver video content such as movies, series, or educational videos. The system supports user authentication, content categorization, search, watch history, and admin content management. Optimized for performance and scalability, the platform delivers a smooth and engaging viewing experience.",
+    tags: [
+      { name: "react", color: "text-blue-500" },
+      { name: "nodejs", color: "text-green-500" },
+      { name: "expressjs", color: "text-green-500" },
+      { name: "mongodb", color: "text-green-500" },
+      { name: "tailwind", color: "text-pink-500" },
+    ],
+    images: [streaming, streaming2, streaming3],
+    source_code_link: "https://github.com/didarBro/Streaming-Website",
+    live_link: "https://streaming-platform-demo.vercel.app/",
+    details: "https://docs.example.com/streaming-platform",
     category: "development",
   },
   {
@@ -256,7 +334,8 @@ const projects = [
       { name: "NLP", color: "text-green-500" },
     ],
     images: [chestxray], // Single image
-    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
+    source_code_link:
+      "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.chest-xray.com/",
     details: "https://docs.example.com/chest-xray",
     category: "ai-ml",
@@ -273,7 +352,8 @@ const projects = [
       { name: "Grad-CAM", color: "text-green-500" },
     ],
     images: [braintumor], // Single image
-    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
+    source_code_link:
+      "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.brain-tumor.ai/",
     details: "https://docs.example.com/brain-tumor",
     category: "ai-ml",
@@ -290,7 +370,8 @@ const projects = [
       { name: "Computer Vision", color: "text-blue-500" },
     ],
     images: [smokeprediction], // Single image
-    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
+    source_code_link:
+      "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.smoke-detection.com/",
     details: "https://docs.example.com/vehicle-smoke",
     category: "ai-ml",
@@ -307,7 +388,8 @@ const projects = [
       { name: "WebRTC", color: "text-blue-500" },
     ],
     images: [facialemotion], // Single image
-    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
+    source_code_link:
+      "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.emotion-detection.com/",
     details: "https://docs.example.com/emotion-detection",
     category: "ai-ml",
@@ -324,7 +406,8 @@ const projects = [
       { name: "Gesture Recognition", color: "text-yellow-500" },
     ],
     images: [signlanguage], // Single image
-    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
+    source_code_link:
+      "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.sign-language.com/",
     details: "https://docs.example.com/sign-language",
     category: "ai-ml",
@@ -341,7 +424,8 @@ const projects = [
       { name: "Predictive Analytics", color: "text-purple-500" },
     ],
     images: [strokeprediction], // Single image
-    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
+    source_code_link:
+      "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.stroke-prediction.com/",
     details: "https://docs.example.com/stroke-prediction",
     category: "ai-ml",
@@ -358,7 +442,8 @@ const projects = [
       { name: "Predictive Modeling", color: "text-purple-500" },
     ],
     images: [studentdropout], // Single image
-    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
+    source_code_link:
+      "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.student-dropout.com/",
     details: "https://docs.example.com/student-dropout",
     category: "ai-ml",
@@ -375,7 +460,8 @@ const projects = [
       { name: "Multi-class", color: "text-green-500" },
     ],
     images: [hyperkvasir], // Single image
-    source_code_link: "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
+    source_code_link:
+      "https://github.com/didarBro/Kaggle-AI-ML-all-code-backup",
     live_link: "https://demo.hyper-kvasir.com/",
     details: "https://docs.example.com/hyper-kvasir",
     category: "ai-ml",
